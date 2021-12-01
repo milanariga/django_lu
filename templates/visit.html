@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <p>
+        <strong>{{ visit.visitor }} will arrive at {{ visit.date_time }}</strong><br>
+        Reason: {{ visit.reason }}
+    </p>
+
+    {% if visit.image %}
+        <img src="{{ visit.image.url }}">
+    {% endif %}
+
+{% endblock %}

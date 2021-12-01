@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <ul>
+        {% for visit in visits %}
+            <li>
+                <a href="{% url 'get-visit' visit_id=visit.id %}">
+                    ID: {{ visit.id }} <br>
+                    <strong>{{ visit.visitor }} at {{ visit.date_time }}</strong> <br>
+                    Reason: {{ visit.reason }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
